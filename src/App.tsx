@@ -1,11 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../src/App.css";
 
 type Note = { id: number; text: string};
 
 const App = () => {
+
   const [text, setText] = useState<string>("");
   const [notes, setNotes] = useState<Note[]>([]);
+  const [isLoaded, setIsLoaded] = useState(false); 
+
+  // Load Notes from  localstorage: 
+  useEffect(() => {
+    const savedNotes = localStorage.getItem('notes'); 
+    if (savedNotes) {
+      setNotes(JSON.parse(savedNotes)); 
+    }
+    setIsLoaded(true); 
+  }, [])
+  
+  // Save notes in localStorage whenever it changes: 
+  useEffect(() => {
+    if (isLoaded) {
+      localStorage.setItem('notes', JSON.stringify(notes)); 
+    }
+  }, [notes, isLoaded ])
 
   const addNote = () => {
     if (!text.trim()) return; 

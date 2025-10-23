@@ -4,6 +4,11 @@
   "version": "1.0",
   "description": "Add, View & Delete simple notes",
   "action": {
-    "default_popup": "index.html"
-  }
+    "default_popup": "index.html",
+    "default_icon": "notes_extension.png"
+  },
+  "icons": {
+    "128": "notes_extension.png"
+  },
+  "permissions": ["storage"]
 }
