@@ -1,4 +1,4 @@
-# Simple Notes Chrome Extension
+# Snappy: To-Do List Chrome Extension
 
 A lightweight Chrome extension for quickly adding, viewing, and deleting simple notes. Perfect for jotting down quick thoughts, reminders, or temporary information.
 
